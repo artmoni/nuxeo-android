@@ -30,10 +30,18 @@ public class SQLStateManager extends SQLiteOpenHelper {
 
     protected static final String DBNAME = "NuxeoCaches";
 
+    private static SQLStateManager instance;
+
     protected Map<String, SQLTableWrapper> tableWrappers = new HashMap<String, SQLTableWrapper>();
 
-    public SQLStateManager(Context context) {
+    private SQLStateManager(Context context) {
         super(context, DBNAME, null, VERSION);
+    }
+
+    public static SQLStateManager getInstance(Context context) {
+        if (instance == null)
+            instance = new SQLStateManager(context);
+        return instance;
     }
 
     public void registerWrapper(SQLTableWrapper wrapper) {

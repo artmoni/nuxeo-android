@@ -89,7 +89,8 @@ public class NuxeoContext extends BroadcastReceiver {
         this.androidContext = androidContext;
 
         // persistence managers
-        sqlStateManager = new SQLStateManager(androidContext);
+        sqlStateManager = SQLStateManager.getInstance(androidContext);
+//        sqlStateManager = new SQLStateManager(androidContext);
         blobStore = new BlobStoreManager(androidContext);
         // config related services
         serverConfig = nxConfig;

@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd"
+>
   <modelVersion>4.0.0</modelVersion>
   <parent>
     <groupId>org.nuxeo.android</groupId>
@@ -8,7 +9,6 @@
     <version>2.0</version>
     <relativePath>../pom.xml</relativePath>
   </parent>
-
   <groupId>org.nuxeo.android</groupId>
   <artifactId>nuxeo-android-connector</artifactId>
   <name>Nuxeo Android Connector</name>
@@ -19,10 +19,8 @@
       <artifactId>android</artifactId>
     </dependency>
     <dependency>
-      <groupId>android.support</groupId>
-      <artifactId>compatibility-v4</artifactId>
-      <version>18</version>
+      <groupId>com.android.support</groupId>
+      <artifactId>support-v4</artifactId>
     </dependency>
   </dependencies>
-
 </project>

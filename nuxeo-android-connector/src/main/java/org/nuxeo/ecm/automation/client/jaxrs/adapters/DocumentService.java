@@ -96,6 +96,8 @@ public class DocumentService {
 
     public static final String CancelLike = "Services.CancelLike";
 
+    public static final String GetUsersAndGroups = "Document.GetUsersAndGroups";
+
     // //TODO GetAcl?
 
     protected Session session;
@@ -390,5 +392,29 @@ public class DocumentService {
      */
     public Blob getLikeStatus(DocRef doc) throws Exception {
         return (Blob) session.newRequest(GetLikeStatus).set("document", doc).execute();
+    }
+
+    /**
+     * @since 2.0
+     */
+    public Document getUsersAndGroups(DocRef doc, String permission,
+            String variable) throws Exception {
+        return getUsersAndGroups(doc, permission, variable, false, false, false);
+    }
+
+    /**
+     * @since 2.0
+     */
+    public Document getUsersAndGroups(DocRef doc, String permission,
+            String variable, boolean ignoreGroups, boolean prefixIdentifiers,
+            boolean resolveGroups) throws Exception {
+        OperationRequest req = session.newRequest(GetUsersAndGroups).setInput(
+                doc);
+        req.set("permission", permission);
+        req.set("variable name", variable);
+        req.set("ignore groups", ignoreGroups);
+        req.set("prefix identifiers", prefixIdentifiers);
+        req.set("resolve groups", resolveGroups);
+        return (Document) req.execute();
     }
 }

@@ -23,6 +23,21 @@
       <artifactId>support-v4</artifactId>
     </dependency>
     <dependency>
+      <groupId>android.support</groupId>
+      <artifactId>compatibility-v7</artifactId>
+      <type>jar</type>
+    </dependency>
+    <dependency>
+      <groupId>android.support</groupId>
+      <artifactId>compatibility-v7-appcompat</artifactId>
+      <type>apklib</type>
+    </dependency>
+    <dependency>
+      <groupId>android.support</groupId>
+      <artifactId>compatibility-v7-appcompat</artifactId>
+      <type>jar</type>
+    </dependency>
+    <dependency>
       <groupId>org.nuxeo.android</groupId>
       <artifactId>nuxeo-android-connector</artifactId>
     </dependency>
